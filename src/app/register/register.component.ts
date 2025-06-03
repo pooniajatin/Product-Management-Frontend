@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ReactiveFormsModule,FormControl, FormGroup, Validators} from '@angular/forms';
 //import { AsyncPipe,JsonPipe } from '@angular/common';
-import { RegisterService } from '../services/register.service';
+import { RegisterService } from '../services/registerService/register.service';
 import { NgIf } from '@angular/common';
 @Component({
   standalone: true,
@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit{
       next :(res)=> {
         console.log('registered',res)
         this.successMessage = res.msg ||"Registration Successfull"
+        
         
       },
       error: (err)=>{
