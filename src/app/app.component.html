@@ -2,8 +2,19 @@
   <div class="container-fluid">
     <h1 class="navbar-brand mb-0">Product Management App</h1>
     <div class="d-flex align-items-center ms-auto">
-      <span class="me-3">Already a user? Sign In</span>
-      <a href="#" class="btn btn-primary" (click)="navigateTo('login'); $event.preventDefault()">Login</a>
+      <span class="me-3" *ngIf="!isLoggedIn">Already a user? Sign In</span>
+      <a 
+        *ngIf="!isLoggedIn" 
+        href="#" 
+        class="btn btn-primary" 
+        (click)="navigateTo('login'); $event.preventDefault()"
+      >Login</a>
+      <a 
+        *ngIf="isLoggedIn" 
+        href="#" 
+        class="btn btn-danger" 
+        (click)="navigateTo('logout'); $event.preventDefault()"
+      >Logout</a>
     </div>
   </div>
 </nav>

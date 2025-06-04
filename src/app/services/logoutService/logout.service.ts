@@ -8,7 +8,7 @@ export class LogoutService {
  
   constructor(private http:HttpClient) { }
   private baseUrl = 'http://localhost:3000/api/v1'
-   logoutUser(data:any):Observable<any>{
-    return this.http.post(`${this.baseUrl}/logout`,data);
-   }
+   logoutUser(data: any): Observable<any> {
+  return this.http.post(`${this.baseUrl}/logout`, data,  {withCredentials: true} );
+}
 }
