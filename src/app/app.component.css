@@ -24,11 +24,11 @@
   font-size: 1rem;
   padding: 6px 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(65, 90, 119, 0.1);
+  box-shadow: 0 2px 8px rgba(21, 27, 34, 0.1);
 }
 
 button[mat-raised-button][color="accent"] {
-  background-color: #415a77 !important;
+  background-color: #2a3b4e !important;
   color: #e0e1dd !important;
   margin-right: 0.5rem;
 }

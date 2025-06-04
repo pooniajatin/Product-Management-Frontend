@@ -97,6 +97,7 @@ sub{
   padding: 2.5rem 2rem;
   max-width: 400px;
   width: 100%;
+  opacity: 90%;
   box-shadow: 0 8px 32px rgba(65, 90, 119, 0.15);
 }
 
