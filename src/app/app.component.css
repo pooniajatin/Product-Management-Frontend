@@ -1,0 +1,18 @@
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 8px;
+}
+h2{
+    text-align: center;
+}
+span{
+    text-align: right;
+}
+a{
+    text-align: right;
+}
+.navbar navbar-expand-lg navbar-light bg-light mb-4 px-4{
+    background-color: aquamarine;
+}

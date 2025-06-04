@@ -1,2 +1,10 @@
-<!--<app-register></app-register>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 px-4">
+  <div class="container-fluid">
+    <h1 class="navbar-brand mb-0">Product Management App</h1>
+    <div class="d-flex align-items-center ms-auto">
+      <span class="me-3">Already a user? Sign In</span>
+      <a href="#" class="btn btn-primary" (click)="navigateTo('login'); $event.preventDefault()">Login</a>
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>
