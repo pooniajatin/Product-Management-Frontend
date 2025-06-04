@@ -1,18 +1,51 @@
-nav{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin: 8px;
+.custom-toolbar {
+  padding: 0 32px;
+  background: linear-gradient(120deg, #1b263b 0%, #415a77 100%);
+  box-shadow: 0 4px 16px rgba(13, 27, 42, 0.18);
+  min-height: 64px;
 }
-h2{
-    text-align: center;
+
+.app-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e0e1dd;
 }
-span{
-    text-align: right;
+
+.accent-icon {
+  color: #9eb0c5;
+  font-size: 2rem;
+  margin-right: 0.75rem;
 }
-a{
-    text-align: right;
+
+.custom-btn {
+  font-size: 1rem;
+  padding: 6px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(65, 90, 119, 0.1);
 }
-.navbar navbar-expand-lg navbar-light bg-light mb-4 px-4{
-    background-color: aquamarine;
+
+button[mat-raised-button][color="accent"] {
+  background-color: #415a77 !important;
+  color: #e0e1dd !important;
+  margin-right: 0.5rem;
+}
+button[mat-raised-button][color="warn"] {
+  background-color: #e63946 !important;
+  color: #fff !important;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.me-2 {
+  margin-right: 0.5rem;
+}
+.me-3 {
+  margin-right: 1rem;
+}
+.already-user {
+  color: #fff;
 }

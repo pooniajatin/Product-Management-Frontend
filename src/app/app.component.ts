@@ -3,11 +3,13 @@ import { RouterOutlet ,Router} from '@angular/router';
 import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { NgIf } from '@angular/common';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   standalone:true,
   selector: 'app-root',
-  imports: [RouterOutlet,NgIf],
+  imports: [RouterOutlet,NgIf,MatToolbarModule,MatButtonModule,MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
