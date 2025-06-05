@@ -1,0 +1,7 @@
+<div class="product-modal-container">
+  <h2 class="product-modal-title">{{ data.name }}</h2>
+  <img [src]="data.imageUrl" alt="{{ data.name }}" class="product-modal-image" />
+  <p class="product-modal-description">{{ data.description }}</p>
+  <p class="product-modal-price"><strong>Price:</strong> {{ data.price | currency }}</p>
+  <button mat-raised-button color="primary" class="product-modal-close-btn" (click)="dialogRef.close()">Close</button>
+</div>

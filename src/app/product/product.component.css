@@ -1,0 +1,16 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin: 10px;
+    transition: transform 0.2s
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Makes it responsive and wrap on smaller screens */
+  gap: 16px;        /* Space between cards */
+  justify-content: center; /* Optional: center the cards */
+}

@@ -1,0 +1,10 @@
+<div class="card-container">
+    <div *ngFor="let product of products" class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="product.imageUrl" alt="{{ product.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text"><strong>Price:</strong> {{ product.price | currency }}</p>  
+  </div>
+  <button mat-button (click)="openModal(product)">View Details</button>
+</div>
+</div>

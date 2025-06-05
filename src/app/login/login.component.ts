@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from '../services/loginService/login.service';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule,NgIf],
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit{
   success!:string;
   errormsg!:string
   CheckUser!:any
+  constructor(private router :Router){}
  ngOnInit(): void {
    this.CheckUser = new FormGroup({
     email : new FormControl('',[Validators.required,Validators.email]),
@@ -24,7 +26,8 @@ export class LoginComponent implements OnInit{
       next: (res)=>{
         localStorage.setItem('Bearer',res.accessToken);
         this.success = res.msg;
-         console.log("cookie",document.cookie)
+        this.router.navigate(['/products'])
+
       },
       error:(err)=>{
          if (err.error && err.error.msg) {

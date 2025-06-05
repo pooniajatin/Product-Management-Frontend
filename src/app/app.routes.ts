@@ -4,25 +4,31 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { authGuard } from './RouteGuards/authGuard/auth.guard';
+import { ProductComponent } from './product/product.component';
 export const routes: Routes = [
- {
+  {
     path: 'register',
     component: RegisterComponent,
   },
-{
-    path:'login',
-    component:LoginComponent,
-},
-{
-    path:'logout',
-    component:LogoutComponent,
-    canActivate:[ authGuard]
-},
-{
-    path:'dummy',
-    component:DummyComponent,
-    canActivate:[ authGuard]
-},
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'products',
+    component: ProductComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'dummy',
+    component: DummyComponent,
+    canActivate: [authGuard],
+  },
   {
     path: '',
     redirectTo: '/register',

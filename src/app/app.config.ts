@@ -6,9 +6,11 @@ import { authInterceptor } from './interceptors/authinterceptor/auth.interceptor
 import { refreshTokenInterceptor } from './interceptors/refreshtoken/refresh-token.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
     provideHttpClient(
-      withInterceptors([authInterceptor,refreshTokenInterceptor]),
-    )
-  ]
+      withInterceptors([authInterceptor, refreshTokenInterceptor])
+    ),
+  ],
 };
