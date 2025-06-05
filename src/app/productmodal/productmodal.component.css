@@ -1,50 +1,79 @@
 .product-modal-container {
-  background: #fff;
-  box-shadow: 0 8px 32px rgba(65, 90, 119, 0.18);
+  background: #f8fafc;
+  box-shadow: 0 8px 32px rgba(27, 38, 59, 0.18);
   max-width: 480px;
- 
+  margin: auto;
   text-align: center;
+  border-radius: 24px;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  position: relative;
 }
 
 .product-modal-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.1rem;
+  font-weight: 800;
   color: #1b263b;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
 }
 
 .product-modal-image {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 16px;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 2px 12px rgba(65, 90, 119, 0.10);
+  border-radius: 18px;
+  margin-bottom: 1.3rem;
+  box-shadow: 0 2px 16px rgba(65, 90, 119, 0.13);
+  background: #e0e1dd;
+  border: 1px solid #e0e1dd;
 }
 
 .product-modal-description {
   font-size: 1.08rem;
   color: #415a77;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
 }
 
 .product-modal-price {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   color: #22223b;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.7rem;
+  font-weight: 500;
+}
+
+.product-modal-price strong {
+  color: #1976d2;
+  font-weight: 700;
 }
 
 .product-modal-close-btn {
   width: 100%;
   border-radius: 12px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
   background: linear-gradient(90deg, #1976d2 0%, #415a77 100%);
   color: #fff !important;
   box-shadow: 0 2px 8px rgba(65, 90, 119, 0.10);
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
+  padding: 0.75rem 0;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+  border: none;
 }
 
 .product-modal-close-btn:hover {
   background: linear-gradient(90deg, #415a77 0%, #1976d2 100%);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+  color: #fff !important;
+}
+
+@media (max-width: 600px) {
+  .product-modal-container {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    max-width: 98vw;
+  }
+  .product-modal-image {
+    height: 150px;
+  }
 }

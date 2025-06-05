@@ -5,6 +5,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { authGuard } from './RouteGuards/authGuard/auth.guard';
 import { ProductComponent } from './product/product.component';
+import { EditproductsComponent } from './editproducts/editproducts.component';
 export const routes: Routes = [
   {
     path: 'register',
@@ -23,6 +24,10 @@ export const routes: Routes = [
     path: 'products',
     component: ProductComponent,
     canActivate: [authGuard],
+  },
+  {
+    path:'editproducts',
+    component: EditproductsComponent
   },
   {
     path: 'dummy',
