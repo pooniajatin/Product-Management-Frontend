@@ -1,11 +1,42 @@
 <mat-toolbar color="primary" class="mat-elevation-z4 custom-toolbar">
-  <span class="app-title">
-    <mat-icon class="me-2 accent-icon">inventory_2</mat-icon>
-    Product Management App
-  </span>
+  <button
+    matButton
+    [matMenuTriggerFor]="menu"
+    matMiniFab
+    aria-label="Example icon button with a menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="'/products'" >Products</button>
+  <button mat-menu-item [routerLink]="'/productable'">Edit Products</button>
+  <button mat-menu-item [routerLink]="'/createproduct'">Create Products</button>
+</mat-menu>
+
+
+  <span class="app-title"> Product Management App </span>
   <span class="spacer"></span>
- <span *ngIf="!isLoggedIn" class="me-3 already-user">Already a user? <b>Sign In</b></span>
-  <button *ngIf="!isLoggedIn" mat-raised-button color="accent" class="custom-btn" (click)="navigateTo('login')">Login</button>
-  <button *ngIf="isLoggedIn" mat-raised-button color="warn" class="custom-btn" (click)="navigateTo('logout')">Logout</button>
+  <span *ngIf="!isLoggedIn" class="me-3 already-user"
+    >Already a user? <b>Sign In</b></span
+  >
+  <button
+    class="login"
+    *ngIf="!isLoggedIn"
+    mat-raised-button
+    color="accent"
+    class="custom-btn"
+    (click)="navigateTo('login')"
+  >
+    Login
+  </button>
+  <button
+    *ngIf="isLoggedIn"
+    mat-raised-button
+    color="warn"
+    class="custom-btn"
+    (click)="navigateTo('logout')"
+  >
+    Logout
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

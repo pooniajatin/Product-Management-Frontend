@@ -14,12 +14,14 @@
   color: #e0e1dd;
 }
 
-.accent-icon {
-  color: #9eb0c5;
-  font-size: 2rem;
-  margin-right: 0.75rem;
-}
 
+
+.custom-btn {
+  font-size: 1rem;
+  padding: 6px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(21, 27, 34, 0.1);
+}
 .custom-btn {
   font-size: 1rem;
   padding: 6px 20px;

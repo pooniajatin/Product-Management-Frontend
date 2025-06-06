@@ -1,0 +1,75 @@
+.product-table-container {
+  padding: 1.5rem 0.5rem;
+  background: white;
+  align-items: center;
+}
+h1{
+    text-align: center;
+    font-weight: 500;
+}
+.product-table {
+  background: #fff;
+  padding: 20px;
+  border: 2px solid;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(104, 109, 116, 0.1);
+  width: 85%;
+  margin-top: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 45%;
+  overflow-x: auto;
+
+  
+}
+th{
+    font-weight: 500;
+    background-color: antiquewhite;
+
+}
+
+.product-table thead tr {
+  
+  color: #fff;
+  font-weight: 450;
+}
+
+.product-table th, .product-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.75rem 0.5rem;
+  font-size: 1.05rem;
+}
+
+.product-table tbody tr.even {
+  background: #f8fafc;
+}
+
+.product-table tbody tr.odd {
+  background: #e0e1dd;
+}
+
+.btn {
+  padding: 0.4rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 1rem;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+
+
+
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .table {
+    min-width: 600px; /* or however wide you need */
+  }
+}
