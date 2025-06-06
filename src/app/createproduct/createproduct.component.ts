@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/productService/product.service';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ProductService } from '../services/productService/product.service';
 import { NgIf } from '@angular/common';
+
 @Component({
-  selector: 'app-editproducts',
-  imports: [ReactiveFormsModule,NgIf],
-  templateUrl: './editproducts.component.html',
-  styleUrl: './editproducts.component.css'
+  selector: 'app-createproduct',
+  imports: [NgIf,ReactiveFormsModule],
+  templateUrl: './createproduct.component.html',
+  styleUrl: './createproduct.component.css'
 })
-export class EditproductsComponent implements OnInit{
-  constructor(private productService:ProductService
+export class CreateproductComponent {
+constructor(private productService:ProductService
   ){
   }
    success!:string;
@@ -22,7 +23,7 @@ export class EditproductsComponent implements OnInit{
       ]),
       imageUrl:new FormControl(''),
       price: new FormControl('',[Validators.required]),
-      description:new FormControl(''),
+      description:new FormControl('',[Validators.required]),
       rating:new FormControl('')
      })
    }
