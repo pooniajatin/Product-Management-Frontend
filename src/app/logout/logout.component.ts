@@ -18,6 +18,8 @@ export class LogoutComponent implements OnInit{
       next: (res)=>{
         console.log("cookie",document.cookie)
         localStorage.removeItem('Bearer');
+        localStorage.removeItem('profileId')
+        localStorage.removeItem('userId')
         this.router.navigate(['/register'])
       },
       error:(err)=>{

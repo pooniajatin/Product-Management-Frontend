@@ -7,6 +7,7 @@ import { authGuard } from './RouteGuards/authGuard/auth.guard';
 import { ProductComponent } from './product/product.component';
 import { CreateproductComponent } from './createproduct/createproduct.component';
 import { ProducttableComponent } from './producttable/producttable.component';
+import { ProfileSectionComponent} from './profile-section/profile-section.component';
 export const routes: Routes = [
   {
     path: 'register',
@@ -43,6 +44,10 @@ export const routes: Routes = [
     component:ProducttableComponent,
         canActivate: [authGuard],
 
+  },
+  {
+    path:'profile',
+    component: ProfileSectionComponent
   },
   {
     path: 'dummy',

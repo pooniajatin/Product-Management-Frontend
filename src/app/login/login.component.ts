@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit{
   private  loginService = inject(LoginService)
+  userId!:string
+  profileId!:string
   success!:string;
   errormsg!:string
   CheckUser!:any
@@ -27,7 +29,10 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('Bearer',res.accessToken);
         this.success = res.msg;
         this.router.navigate(['/products'])
-
+        this.userId = res.profile.userId
+        this.profileId = res.profile._id
+        localStorage.setItem('profileId',this.profileId)
+        localStorage.setItem('userId',this.userId)
       },
       error:(err)=>{
          if (err.error && err.error.msg) {
