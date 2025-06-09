@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { DummyComponent } from './dummy/dummy.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+
 import { authGuard } from './RouteGuards/authGuard/auth.guard';
-import { ProductComponent } from './product/product.component';
-import { CreateproductComponent } from './createproduct/createproduct.component';
-import { ProducttableComponent } from './producttable/producttable.component';
-import { ProfileSectionComponent} from './profile-section/profile-section.component';
+import { ProductComponent } from './components/product/product.component';
+import { CreateproductComponent } from './components/createproduct/createproduct.component';
+import { ProducttableComponent } from './components/producttable/producttable.component';
+import { ProfileSectionComponent} from './components/profile-section/profile-section.component';
 export const routes: Routes = [
   {
     path: 'register',
@@ -50,11 +50,7 @@ export const routes: Routes = [
     component: ProfileSectionComponent,
     canActivate: [authGuard],
   },
-  {
-    path: 'dummy',
-    component: DummyComponent,
-    canActivate: [authGuard],
-  },
+  
   {
     path: '',
     redirectTo: '/register',

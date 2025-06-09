@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { profile } from '../../interface/user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,13 +13,13 @@ export class ProfileService {
    getProfile(id:any):Observable<any>{
     return this.http.get(`${this.baseUrl}/profile/${id}`,{withCredentials: true})
    }
-   createProfile(data:any):Observable<any>{
+   createProfile(data:profile):Observable<any>{
     return this.http.post(`${this.baseUrl}/profile`,data,{withCredentials: true})
    }
    deleteProfile(id:any):Observable<any>{
     return this.http.delete(`${this.baseUrl}/profile/${id}`)
    }
-   updateProfile(id:any,data:any):Observable<any>{
+   updateProfile(id:any,data:profile):Observable<any>{
     return this.http.patch(`${this.baseUrl}/profile/${id}`,data,{withCredentials: true})
    }
 }

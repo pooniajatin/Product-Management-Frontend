@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ProductService } from '../services/productService/product.service';
+import { ProductService } from '../../services/productService/product.service';
 import { NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ProductService } from '../services/productService/product.service';
+import { ProductService } from '../../services/productService/product.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -31,7 +31,8 @@ export class ProductComponent implements OnInit{
   openModal(product:any){
     this.dialog.open(ProductmodalComponent,{
      data:product,
-     width:'600px'
+     width:'450px',
+     height:"550px"
 
     }
     )

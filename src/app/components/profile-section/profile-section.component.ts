@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ProfileService } from '../services/profileService/profile.service';
-import { DeleteUserService } from '../services/deleteUserService/delete-user.service';
+import { ProfileService } from '../../services/profileService/profile.service';
+import { DeleteUserService } from '../../services/deleteUserService/delete-user.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DatePipe, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
@@ -63,6 +63,8 @@ export class ProfileSectionComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.success = res.msg;
+          this.editable = !this.editable
+          this.getProfile();
         },
         error: (err) => {
           this.err = err;

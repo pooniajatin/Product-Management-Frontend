@@ -1,6 +1,7 @@
 .custom-toolbar {
-  background: linear-gradient(120deg, #1b263b 0%, #415a77 100%) !important;
-  color: white !important;
+   background-color: #336699 !important;
+  
+  color: white!important;
   height: 64px; /* Default height for mat-toolbar */
   width: 100%;
   display: flex;
@@ -16,5 +17,4 @@
 .custom-toolbar .spacer {
   flex: 1 1 auto;
 }
-
 

@@ -1,8 +1,12 @@
 .profile-1{
     background: linear-gradient(120deg, #1b263b 0%, #415a77 100%);
     width: 100%;
-    height: 100%;
-    padding-top: 2.8rem;
+    height: 120%;
+    padding-top: 4rem;
+    display: flex;
+    
+    justify-content: center;
+   
 }
 .profile-container {
   border-radius: 16px;
@@ -10,9 +14,9 @@
   background: #f8fafc;
   box-shadow: 0 4px 24px rgba(65, 90, 119, 0.10);
   padding: 2rem 1.5rem;
-  max-width: 800px;
+  max-width: 600px;
+ height: 350px;
  
-  margin-left: 14rem;
   
 }
 .profile-top{ 
@@ -27,8 +31,8 @@
   margin-top: 1rem;
   margin-left: 3rem;
   margin-bottom: 1rem;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   
   border: 3px solid #ddd;
@@ -39,7 +43,7 @@
 }
 .profile-name{
     position: relative;
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-left: 3rem;
     font-weight: 550;
     
@@ -68,18 +72,19 @@
 }
  
 .register-outer {
-  min-height: 100vh;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, #1b263b 0%, #415a77 100%);
+  width: 500px;
+  padding-top: 0px;
 }
 
 .register-card {
   background: #fff;
   border-radius: 18px;
   padding: 2.5rem 2rem;
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   opacity: 90%;
   box-shadow: 0 8px 32px rgba(65, 90, 119, 0.15);

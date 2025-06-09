@@ -1,24 +1,24 @@
 .product-modal-container {
-  background: #f8fafc;
-  box-shadow: 0 8px 32px rgba(27, 38, 59, 0.18);
-  max-width: 480px;
+  
+  max-width: 350px;
   margin: auto;
+  margin-top: 5px;
   text-align: center;
-  border-radius: 24px;
+  
   padding: 2.5rem 1.5rem 2rem 1.5rem;
   position: relative;
 }
 
 .product-modal-title {
   font-size: 2.1rem;
-  font-weight: 800;
+  font-weight: 500;
   color: #1b263b;
   margin-bottom: 1.2rem;
   letter-spacing: 0.5px;
 }
 
 .product-modal-image {
-  width: 100%;
+  width: 90%;
   height: 220px;
   object-fit: cover;
   border-radius: 18px;
@@ -31,14 +31,14 @@
 .product-modal-description {
   font-size: 1.08rem;
   color: #415a77;
-  margin-bottom: 1.2rem;
-  line-height: 1.5;
+  margin-bottom: .5rem;
+  line-height: 1.2;
 }
 
 .product-modal-price {
   font-size: 1.18rem;
   color: #22223b;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
@@ -48,9 +48,9 @@
 }
 
 .product-modal-close-btn {
-  width: 100%;
+  width: 80%;
   border-radius: 12px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.1rem;
   background: linear-gradient(90deg, #1976d2 0%, #415a77 100%);
   color: #fff !important;

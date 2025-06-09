@@ -6,9 +6,10 @@ import {
   Validators,
 } from '@angular/forms';
 //import { AsyncPipe,JsonPipe } from '@angular/common';
-import { RegisterService } from '../services/registerService/register.service';
+import { RegisterService } from '../../services/registerService/register.service';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { user } from '../../interface/user';
 @Component({
   standalone: true,
   selector: 'app-register',

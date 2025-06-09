@@ -1,6 +1,6 @@
 
 .register-outer {
-  min-height: 100vh;
+ height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,12 +9,13 @@
 
 .register-card {
   background: #fff;
+   height: 450px;
   border-radius: 18px;
   padding: 2.5rem 2rem;
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
-  opacity: 90%;
-  box-shadow: 0 8px 32px rgba(65, 90, 119, 0.15);
+  
+  box-shadow: 0 8px 32px #415a77 ;
 }
 
 .asterisk {
