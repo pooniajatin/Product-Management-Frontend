@@ -47,7 +47,8 @@ export const routes: Routes = [
   },
   {
     path:'profile',
-    component: ProfileSectionComponent
+    component: ProfileSectionComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'dummy',
