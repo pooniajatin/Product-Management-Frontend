@@ -1,28 +1,41 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profileService/profile.service';
 import { DeleteUserService } from '../../services/deleteUserService/delete-user.service';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { DatePipe, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { LogoutService } from '../../services/logoutService/logout.service';
 @Component({
   selector: 'app-profile-section',
-  imports: [ReactiveFormsModule,NgIf,DatePipe,MatCardModule, MatButtonModule ],
+  imports: [
+    ReactiveFormsModule,
+    NgIf,
+    DatePipe,
+    MatCardModule,
+    MatButtonModule,
+  ],
   templateUrl: './profile-section.component.html',
   styleUrl: './profile-section.component.css',
 })
 export class ProfileSectionComponent implements OnInit {
   private profileService = inject(ProfileService);
   private deleteuserService = inject(DeleteUserService);
-  editable = false
+  private logoutService = inject(LogoutService);
+  editable = false;
   profileId: string | null = null;
   userId: string | null = null;
   profileDetails!: FormGroup;
-  profileDetailsArray: any = {}
+  profileDetailsArray: any = {};
   success: string | null = null;
   err: string | null = null;
-  constructor(private router:Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.profileDetails = new FormGroup({
@@ -32,9 +45,8 @@ export class ProfileSectionComponent implements OnInit {
       ]),
       email: new FormControl('', [Validators.required, Validators.email]),
       address: new FormControl(''),
-      dob : new FormControl(''),
+      dob: new FormControl(''),
       profilePhoto: new FormControl(''),
-
     });
     this.profileId = localStorage.getItem('profileId');
     this.userId = localStorage.getItem('userId');
@@ -49,8 +61,8 @@ export class ProfileSectionComponent implements OnInit {
   getProfile() {
     this.profileService.getProfile(this.profileId!).subscribe({
       next: (res) => {
-        this.profileDetails.patchValue(res.profile)
-        this.profileDetailsArray = res.profile
+        this.profileDetails.patchValue(res.profile);
+        this.profileDetailsArray = res.profile;
       },
       error: (err) => {
         console.error('Failed to fetch profile:', err);
@@ -63,7 +75,7 @@ export class ProfileSectionComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.success = res.msg;
-          this.editable = !this.editable
+          this.editable = !this.editable;
           this.getProfile();
         },
         error: (err) => {
@@ -75,15 +87,28 @@ export class ProfileSectionComponent implements OnInit {
     this.profileService.deleteProfile(this.profileId).subscribe({
       next: (res) => {
         this.success = res.msg;
-        this.router.navigate(['register'])
+        this.logoutService.logoutUser({}).subscribe({
+          next: (res) => {
+            //console.log("cookie",document.cookie)
+            localStorage.removeItem('Bearer');
+            localStorage.removeItem('profileId');
+            localStorage.removeItem('userId');
+            this.router.navigate(['/register']);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+        this.deleteuserService.deleteUser(this.userId).subscribe();
+
+        this.router.navigate(['register']);
       },
       error: (err) => {
         this.err = err;
       },
     });
-    this.deleteuserService.deleteUser(this.userId).subscribe();
   }
-  isedit(){
-     this.editable = !this.editable
+  isedit() {
+    this.editable = !this.editable;
   }
 }
