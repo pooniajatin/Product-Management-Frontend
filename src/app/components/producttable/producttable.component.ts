@@ -25,7 +25,7 @@ export class ProducttableComponent implements OnInit {
       error: (err) => console.log(err),
     });
   }
-  deleteProduct(id: any) {
+  deleteProduct(id: string) {
     this.productService.deleteProduct(id).subscribe({
       next: (res) => {
         this.deleteMsg = res.msg;
@@ -34,7 +34,7 @@ export class ProducttableComponent implements OnInit {
       error: (err) => console.log(err),
     });
   }
-  updateProducts(id:any){
+  updateProducts(id:string){
       this.router.navigate(['createproduct',id])
   }
 }
