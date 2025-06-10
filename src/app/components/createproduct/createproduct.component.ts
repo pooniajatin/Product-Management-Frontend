@@ -16,16 +16,31 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './createproduct.component.css',
 })
 export class CreateproductComponent {
-  id!: any;
+  id!: string|null;
   success!: string;
   errormsg!: string;
-  product!: any;
+  product!: FormGroup;
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.formInit();
+
+    this.route.paramMap.subscribe((params) => {
+      this.id = params.get('id');
+      if (this.id) {
+        this.productService.getProduct(this.id).subscribe({
+          next: (res) => {
+            this.product.patchValue(res.product);
+          },
+        });
+      }
+    });
+  }
+
+  formInit() {
     this.product = new FormGroup({
       name: new FormControl('', [Validators.required]),
       imageUrl: new FormControl(''),
@@ -33,37 +48,23 @@ export class CreateproductComponent {
       description: new FormControl('', [Validators.required]),
       rating: new FormControl(''),
     });
-
-    this.route.paramMap.subscribe((params) => {
-      this.id = params.get('id');
-      if (this.id) {
-        this.productService.getProduct(this.id).subscribe({
-          next: (res) => {
-
-            this.product.patchValue(res.product); 
-          },
-        });
-      }
-    });
   }
-  
-  
+
   onSubmit() {
-    if(this.id){
-       this.productService.updateProduct(this.id,this.product.value).subscribe({
-        next:(res)=>{
+    if (this.id) {
+      this.productService.updateProduct(this.id, this.product.value).subscribe({
+        next: (res) => {
           this.success = res.msg;
         },
-        error:(err)=>{
-          this.errormsg = err
-        }
-       })
-    }else{
+        error: (err) => {
+          this.errormsg = err;
+        },
+      });
+    } else {
       this.productService.createProduct(this.product.value).subscribe({
-      next: (res) => (this.success = res.msg),
-      error: (err) => (this.errormsg = err),
-    });
+        next: (res) => (this.success = res.msg),
+        error: (err) => (this.errormsg = err),
+      });
     }
-    
   }
 }
