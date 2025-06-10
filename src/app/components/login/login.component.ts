@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit{
   profileId!:string
   success!:string;
   errormsg!:string
-  CheckUser!:any
+  CheckUser!:FormGroup
   constructor(private router :Router){}
  ngOnInit(): void {
    this.CheckUser = new FormGroup({

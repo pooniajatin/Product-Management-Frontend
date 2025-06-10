@@ -16,7 +16,7 @@ export class LogoutComponent implements OnInit{
   logout(){
     this.logoutService.logoutUser({}).subscribe({
       next: (res)=>{
-        console.log("cookie",document.cookie)
+        //console.log("cookie",document.cookie)
         localStorage.removeItem('Bearer');
         localStorage.removeItem('profileId')
         localStorage.removeItem('userId')

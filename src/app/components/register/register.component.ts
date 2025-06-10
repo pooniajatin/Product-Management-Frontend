@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   private registerService = inject(RegisterService);
   successMessage!: string;
   errorMessage!: string;
-  User!: any;
+  User!: FormGroup;
   constructor(private router: Router) {}
   ngOnInit(): void {
     this.User = new FormGroup({
